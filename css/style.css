@@ -1,3 +1,38 @@
-html {
-    background-color: aquamarine;
+/* VARIABLE */ 
+:root {
+    --BG-color: #F5F0F6;
+    --Title-color: #D7B377;
+    --link-color: #35A7FF;
+    --Text-color: #222222;
+    --Title-font: 'Dancing Script', cursive;
+    --Para-font: 'PT Sans Narrow', sans-serif;
 }
+
+body {
+    background-color: var(--BG-color);
+}
+
+/* NAVBAR */
+.navbar__custom{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--BG-color);
+}
+
+/* HEADER */
+.header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .header__img {
+    position: absolute;
+} */
