@@ -6,16 +6,30 @@
     --Text-color: #222222;
     --Title-font: 'Dancing Script', cursive;
     --Para-font: 'PT Sans Narrow', sans-serif;
+    --border-radius-custom : 20px 20px 20px 20px;
+    --box-shadow-custom : var(--Text-color) 0px 5px 15px
 }
 
 body {
     background-color: var(--BG-color);
-    height: 300vh;
+    /* display: flex; */
+}
+
+.line {
+    border: 1px solid var(--Title-color);
+    margin: 15px;
+}
+
+.title__custom {
+    color: var(--Title-color);
+    font-family: var(--Title-font);
+    font-size: 2em;
 }
 
 /* NAVBAR */
 .navbar__custom{
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1;
     background-color: var(--BG-color);
@@ -28,14 +42,18 @@ body {
     margin: 0 10px 0 10px;
 }
 
+.div__nav {
+    position: relative;
+}
+
 /* HEADER */
 .header {
+    top: 0;
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: absolute;
     background-image: url('../assets/salle.jpg');
 }
 
@@ -46,4 +64,92 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* SECTION INDEX */
+.section__index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 5% 25px 5%;
+}
+
+.section__index h1{
+    margin-bottom: 30px;
+    
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carousel img {
+    width: 150px;
+    border-radius: var(--border-radius-custom);
+    box-shadow: var(--box-shadow-custom);
+}
+
+.flocon{
+    width: 2em;
+}
+
+.para__index{
+    margin-top: 15px;
+    font-family: var(--Para-font);
+    font-size: 0.8em;
+}
+
+/* SECTION PRESENTATION */
+.section__presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid: 10px;
+}
+
+.img__valou{
+    width: 150px;
+    border-radius: var(--border-radius-custom);
+    box-shadow: var(--box-shadow-custom);
+    margin: 15px;
+}
+
+.logo__maison{
+    width: 100px;
+    border-radius: var(--border-radius-custom);
+}
+
+.para__presentation{
+    font-family: var(--Para-font);
+    font-size: 1.2em;
+    color: var(--Text-color);
+    padding: 25px 5% 25px 5%;
+}
+
+/* SECTION ACTU */
+.section__actu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.para__actu{
+    font-family: var(--Para-font);
+    color: var(--Text-color);
+    font-size: 1.2em;
+    padding: 25px 5% 25px 5%;
+}
+
+.section__actu__img{
+    display: flex;
+    flex-direction: row;
+}
+
+.section__actu__img img{
+    width: 100px;
 }
