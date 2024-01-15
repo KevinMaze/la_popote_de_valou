@@ -10,6 +10,7 @@
 
 body {
     background-color: var(--BG-color);
+    height: 300vh;
 }
 
 /* NAVBAR */
@@ -18,21 +19,31 @@ body {
     width: 100%;
     z-index: 1;
     background-color: var(--BG-color);
+    opacity: 0.8;
+    font-family: var(--Para-font);
+    font-size: 1.2em;
+}
+
+.nav__div__list li{
+    margin: 0 10px 0 10px;
 }
 
 /* HEADER */
 .header {
-    position: relative;
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-/* .header__img {
+    background-attachment: fixed;
     position: absolute;
-} */
+    background-image: url('../assets/salle.jpg');
+}
+
+.logo__header {
+    max-width: 60%;
+    min-width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

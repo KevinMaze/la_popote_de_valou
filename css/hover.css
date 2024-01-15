@@ -1,0 +1,29 @@
+.hover__custom {
+    position: relative;
+}
+
+.hover__custom::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.hover__custom:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hover__custom::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: var(--link-color);
+    z-index: -1;
+    transition: transform .3s ease;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.hover__custom a:hover {
+    color: var(--Title-color);
+}

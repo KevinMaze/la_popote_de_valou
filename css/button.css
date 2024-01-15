@@ -1,0 +1,40 @@
+@import 'style.css';
+
+.div__button {
+    position: relative;
+    color: var(--link-color);
+}
+
+.div__button a:hover {
+    color: var(--Title-color);
+}
+
+.button__custom {
+    border: 1px solid var(--link-color);
+    border-radius: 20px 20px 20px 20px;
+    padding: 0 20px 0 20px;
+    position: relative;
+    font-family: var(--Para-font);
+}
+
+.button__custom::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.button__custom:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.button__custom::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: var(--link-color);
+    z-index: -1;
+    transition: transform .3s ease;
+    border-radius: 20px 20px 20px 20px;
+}
