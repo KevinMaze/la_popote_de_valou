@@ -21,7 +21,6 @@
     background: var(--link-color);
     z-index: -1;
     transition: transform .3s ease;
-    border-radius: 20px 20px 20px 20px;
 }
 
 .hover__custom a:hover {
