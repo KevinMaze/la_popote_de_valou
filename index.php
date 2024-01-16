@@ -90,5 +90,74 @@
             <p class="para__actu">Abonnez-vous à nos réseaux !</p>
         </section>
 
+        <div class="line"></div>
+
+        <section class="section__hourly">
+            <h2 class="title__custom">Nos Horaires</h2>
+            <h3>Lundi au Vendredi</h3>
+            <p>A Emporter: 11H30 - 14h00</p>
+            <p>Sur place: 12h - 13h45</p>
+            <h3>Vendredi soir</h3>
+            <p>A Emporter: 19H00 - 22h00</p>
+            <p>Sur place: 19h45 - 21h45</p>
+        </section>
+
+        <div class="line"></div>
+
+        <section class="section__map">
+            <h2 class="title__custom">Où nous trouver ?</h2>
+            <p>La Popotte de Valou</p>
+            <p>1262 Route d'Uzès</p>
+            <p>30100 Alès</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.7198958529502!2d4.106734654756146!3d44.109771348461884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b443cd222fd75d%3A0xef9ebc9fc511c70e!2sLa%20Popotte%20de%20Valou!5e0!3m2!1sfr!2sfr!4v1705422698807!5m2!1sfr!2sfr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <div class="line"></div>
+
+        <footer class="footer">
+            <div class="footer__logo">
+                <img src="assets/too_good.png" alt="" class="footer__logo__toogood">
+                <img src="assets/logopopotte_edited.png" alt="" class="footer__logo__popotte">
+                <img src="assets/trip.png" alt="" class="footer__logo__trip">
+            </div>
+
+            <div class="line__footer"></div>
+            
+            <div class="footer__info">
+                <p>La Popotte de Valou</p>
+                <p>1262 Route d'Uzès</p>
+                <p>30100 Alès</p>
+                <h4>Lundi au Vendredi</h4>
+                <p>A Emporter: 11H30 - 14h00</p>
+                <p>Sur place: 12h - 13h45</p>
+                <h4>Vendredi soir</h4>
+                <p>A Emporter: 19H00 - 22h00</p>
+                <p>Sur place: 19h45 - 21h45</p>
+            </div>
+            
+            <div class="line__footer"></div>
+            
+            <div class="footer__nav">
+                <p><a href="">Menus</a></p>
+                <p><a href="">Service à emporter</a></p>
+                <p><a href="">Buffet et repas entreprises</a></p>
+                <p><a href="">Privatisation de salle</a></p>
+                <p><a href="">Gâteaux</a></p>
+            </div>
+            
+            <div class="line__footer"></div>
+            
+            <div class="footer__contact">
+                <p>Email: <a href="mailto:">valerie******@sfr.fr</a></p>
+                <p>Téléphone: <a href="tel:+330647418582">06.47.41.85.82</a></p>
+                <p><a href="tel:+330466541067">04.66.54.10.67</a></p>
+                <p><a href="">Formulaire de contacts</a></p>
+            </div>
+
+            <div class="line__footer"></div>
+
+            <p class="copyright">@ La Popotte de Valou</p>
+            
+        </footer>
 
 <?php include_once 'templates/footer.php'; ?>
