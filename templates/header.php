@@ -3,9 +3,13 @@
     require_once ('lib/session.php');
     require_once ('lib/config.php');
     require_once ('lib/pdo.php');
+    require_once ('lib/user.php');
     //recupère le nom de la page actuelle avec $_SERVER
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
-    
+    $errors = [];
+    require_once ('request/request_user_login.php');
+    var_dump($_SESSION);
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +26,7 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="css/form_login.css">
         <link rel="stylesheet" href="css/hover.css">
         <title><?= $mainMenu[$currentPage]["head_tile"]?></title>
     </head>
@@ -44,7 +49,7 @@
                                     </li>
                             <?php } }?>
                             <li class="nav-item hover__custom">
-                                <?php if(isset($SESSION["user"])) { ?>
+                                <?php if(isset($_SESSION["user"])) { ?>
                                 <a class="nav-link" href="./admin/index_admin.php">Espace Pro</a>
                                 <?php } else { ?>
                                 <a class="nav-link" href="login.php">Connection</a>
@@ -56,6 +61,27 @@
             </nav>
     
             <header class="header" style="background-image: url('<?= $mainMenu[$currentPage]["image"]?>')">
-                <img src="assets/logopopotte_edited.png" alt="logo de la popotte" class="logo__header">
+                <?php if ($mainMenu[$currentPage]["title"] === "La Popotte") { ?>
+                    <img src="assets/logopopotte_edited.png" alt="logo de la popotte" class="logo__header">
+                <?php } else if ($mainMenu[$currentPage]["title"] === "Connection"){ ?>
+                    <form method="post" class="logo__header form__login">
+                        <?php foreach ($errors as $error){ ?>
+                            <div class="alert alert-danger">
+                                <?= $error ?>
+                            </div>
+                        <?php } ?>
+                        <div class="form__login__email">
+                            <label for="email">Email</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div class="form__login__password">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="hover__custom">
+                            <input type="submit" value="Se connecter" class="custom__button" name="loginUser">
+                        </div>
+                    </form>
+                <?php } ?>
             </header>
         </div>
