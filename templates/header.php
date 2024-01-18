@@ -1,6 +1,9 @@
 <?php 
-    include_once ('lib/main_menu.php');
-    //recupère le nom de la page actuelle
+    require_once ('lib/main_menu.php');
+    require_once ('lib/session.php');
+    require_once ('lib/config.php');
+    require_once ('lib/pdo.php');
+    //recupère le nom de la page actuelle avec $_SERVER
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
     
 ?>
@@ -37,9 +40,16 @@
                             <?php foreach ($mainMenu as $key => $menuItem){
                                 if($menuItem["include"] == true){ ?>
                                     <li class="nav-item hover__custom">
-                                        <a class="nav-link" aria-current="page" href="<?= $key ?>"><?= $menuItem["title"]?></a>
+                                        <a class="nav-link" href="<?= $key ?>"><?= $menuItem["title"]?></a>
                                     </li>
                             <?php } }?>
+                            <li class="nav-item hover__custom">
+                                <?php if(isset($SESSION["user"])) { ?>
+                                <a class="nav-link" href="./admin/index_admin.php">Espace Pro</a>
+                                <?php } else { ?>
+                                <a class="nav-link" href="login.php">Connection</a>
+                                <?php } ?>
+                            </li>
                         </ul>
                     </div>
                 </div>

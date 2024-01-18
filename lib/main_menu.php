@@ -50,6 +50,6 @@ $mainMenu = [
         "head_tile" => "Connection",
         "meta_description" => "Connection à l'interface d'administration",
         "image"  => "assets/salle.jpg",
-        "include" => true
+        "include" => false
     ],
 ];
