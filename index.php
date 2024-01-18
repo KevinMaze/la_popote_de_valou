@@ -28,7 +28,7 @@
                     <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11">
                         <ul class="navbar-nav col-lg-12 justify-content-center  nav__div__list">
                             <li class="nav-item hover__custom">
-                            <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                            <a class="nav-link" aria-current="page" href="#">La Popotte</a>
                             </li>
                             <li class="nav-item hover__custom">
                             <a class="nav-link" href="#">Menu</a>
@@ -53,7 +53,7 @@
                 </div>
             </nav>
     
-            <header class="header">
+            <header class="header" style="background-image: url('assets/salle.jpg')">
                 <img src="assets/logopopotte_edited.png" alt="logo de la popotte" class="logo__header">
             </header>
         </div>
