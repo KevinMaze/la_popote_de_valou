@@ -126,40 +126,37 @@
                 <img src="assets/trip.png" alt="" class="footer__logo__trip">
             </div>
 
-            <div class="line__footer"></div>
-            
-            <div class="footer__info">
-                <p>La Popotte de Valou</p>
-                <p>1262 Route d'Uzès</p>
-                <p>30100 Alès</p>
-                <h4>Lundi au Vendredi</h4>
-                <p>A Emporter: 11H30 - 14h00</p>
-                <p>Sur place: 12h - 13h45</p>
-                <h4>Vendredi soir</h4>
-                <p>A Emporter: 19H00 - 22h00</p>
-                <p>Sur place: 19h45 - 21h45</p>
-            </div>
-            
-            <div class="line__footer"></div>
-            
-            <div class="footer__nav">
-                <p><a href="">Menus</a></p>
-                <p><a href="">Service à emporter</a></p>
-                <p><a href="">Buffet et repas entreprises</a></p>
-                <p><a href="">Privatisation de salle</a></p>
-                <p><a href="">Gâteaux</a></p>
-            </div>
-            
-            <div class="line__footer"></div>
-            
-            <div class="footer__contact">
-                <p>Email: <a href="mailto:">valerie******@sfr.fr</a></p>
-                <p>Téléphone: <a href="tel:+330647418582">06.47.41.85.82</a></p>
-                <p><a href="tel:+330466541067">04.66.54.10.67</a></p>
-                <p><a href="">Formulaire de contacts</a></p>
+            <div class="footer__description">
+                <div class="footer__info">
+                    <p>La Popotte de Valou</p>
+                    <p>1262 Route d'Uzès</p>
+                    <p>30100 Alès</p>
+                    <h4>Lundi au Vendredi</h4>
+                    <p>A Emporter: 11H30 - 14h00</p>
+                    <p>Sur place: 12h - 13h45</p>
+                    <h4>Vendredi soir</h4>
+                    <p>A Emporter: 19H00 - 22h00</p>
+                    <p>Sur place: 19h45 - 21h45</p>
+                </div>
+                
+                
+                <div class="footer__nav">
+                    <p><a href="">Menus</a></p>
+                    <p><a href="">Service à emporter</a></p>
+                    <p><a href="">Buffet et repas entreprises</a></p>
+                    <p><a href="">Privatisation de salle</a></p>
+                    <p><a href="">Gâteaux</a></p>
+                </div>
+                
+                
+                <div class="footer__contact">
+                    <p>Email: <a href="mailto:">valerie******@sfr.fr</a></p>
+                    <p>Téléphone: <a href="tel:+330647418582">06.47.41.85.82</a></p>
+                    <p><a href="tel:+330466541067">04.66.54.10.67</a></p>
+                    <p><a href="">Formulaire de contacts</a></p>
+                </div>
             </div>
 
-            <div class="line__footer"></div>
 
             <p class="copyright">@ La Popotte de Valou</p>
             
