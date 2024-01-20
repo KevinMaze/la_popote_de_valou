@@ -19,6 +19,12 @@ body {
     margin: 15px;
 }
 
+.line__div {
+    border: 1px solid var(--Title-color);
+    margin: 15px;
+    width: 80%;
+}
+
 .title__custom {
     color: var(--Title-color);
     font-family: var(--Title-font);
@@ -59,6 +65,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
+/*******************************************START INDEX.PHP*******************************************/
 /* SECTION INDEX */
 .section__index {
     display: flex;
@@ -203,6 +211,54 @@ body {
     width: 90%;
     height: 250px;
 }
+
+/*******************************************END INDEX.PHP*******************************************/
+
+/*******************************************START RESTAURANT.PHP*******************************************/
+/* SECTION DAY MENU */
+.section__day-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div__section__day-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div__section__day-menu p {
+    margin: 0;
+}
+
+.day-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    background-color: var(--Title-color);
+    width: 100%;
+}
+
+/* SECTION MENU */
+.section__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.section__menu p, h3 {
+    font-family: var(--Para-font);
+    color: var(--Text-color);
+}
+
+
+/*******************************************END RESTAURANT.PHP*******************************************/
 
 /* FOOTER */
 .footer {
@@ -394,15 +450,17 @@ body {
     }
     .footer__info, 
     .footer__nav{
-        border-top: none;
         border-right: 1px solid var(--Text-color);
         width: 100%;
         height: 100%;
     }
 
     .footer__contact{
-        border-top: none;
         width: 100%;
         height: 100%;
+    }
+
+    .footer__description div {
+        border-top: none;
     }
 }

@@ -8,7 +8,6 @@
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
     $errors = [];
     require_once ('request/request_user_login.php');
-    var_dump($_SESSION);
 
 ?>
 
@@ -22,12 +21,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="shortcut icon" href="./assets/logopopotte_edited.png" type="image/x-icon">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/button.css">
-        <link rel="stylesheet" href="css/form_login.css">
         <link rel="stylesheet" href="css/hover.css">
+        <link rel="stylesheet" href="css/form_login.css">
+        <link rel="shortcut icon" href="./assets/logopopotte_edited.png" type="image/x-icon">
         <title><?= $mainMenu[$currentPage]["head_tile"]?></title>
     </head>
 
@@ -61,9 +60,8 @@
             </nav>
     
             <header class="header" style="background-image: url('<?= $mainMenu[$currentPage]["image"]?>')">
-                <?php if ($mainMenu[$currentPage]["title"] === "La Popotte") { ?>
-                    <img src="assets/logopopotte_edited.png" alt="logo de la popotte" class="logo__header">
-                <?php } else if ($mainMenu[$currentPage]["title"] === "Connection"){ ?>
+                <img src="assets/logopopotte_edited.png" alt="logo de la popotte" class="logo__header">
+                <?php if ($mainMenu[$currentPage]["title"] === "Connection") { ?>
                     <form method="post" class="logo__header form__login">
                         <?php foreach ($errors as $error){ ?>
                             <div class="alert alert-danger">
@@ -83,5 +81,6 @@
                         </div>
                     </form>
                 <?php } ?>
+
             </header>
         </div>
