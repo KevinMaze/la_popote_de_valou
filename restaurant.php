@@ -1,5 +1,11 @@
 <?php 
-    include_once ('templates/header.php');
+    require_once ('templates/header.php');
+    require_once ('lib/menu.php');
+    $dayMenu = getDayMenu($pdo);
+
+    $categories = getCategorie($pdo);
+
+    $recipes = getRecipeByCategorie($pdo);
 ?>
 
 <div class="line flux"></div>
@@ -11,9 +17,9 @@
         <p class="para__index">Entrée + Plat où Plat + Dessert - 15,90€</p>
         <p class="para__index">Entrée + Plat + Dessert - 18,90€</p>
         <div class="day-menu">
-            <p class="para__index">ENTRE</p>
-            <p class="para__index">PLAT</p>
-            <p class="para__index">DESSERT</p>
+            <p class="para__index"><?= $dayMenu["entre"]?></p>
+            <p class="para__index"><?= $dayMenu["plat"]?></p>
+            <p class="para__index"><?= $dayMenu["dessert"]?></p>
         </div>
     </div>
 </section>
@@ -22,36 +28,15 @@
 
 <section class="section__menu flux">
 
-    <h2 class="title__custom">Salades</h2>
+    <?php include ('templates/restaurant_part.php'); ?>
     
-    <div>
-        <h3>La Popotte</h3>
-        <p>Poulets panés aux cornflakes, œuf au plat, tomates, oignons rouges, légumes grillés, copeaux de Grada Padano et sauce César</p>
-        <p> 14,90 €</p>
-    </div>
-    
-    <div class="line flux"></div>
-    <!-- <h2 class="title__custom">Burgers</h2>
+    <h2 class="title__custom">Menu Enfant</h2>
 
-    <div class="line flux"></div>
-
-    <h2 class="title__custom">Plats</h2>
-
-    <div class="line flux"></div>
-
-    <h2 class="title__custom">Poissons</h2>
-
-    <div class="line flux"></div>
-
-    <h2 class="title__custom">Desserts de la Cheffe</h2>
-
-    <div class="line flux"></div>
-
-    <h2 class="title__custom">Desserts</h2>
-
-    <div class="line flux"></div>
-
-    <h2 class="title__custom">Menu Enfant</h2> -->
+        <div>
+            <h3>Le menu des petits héros</h3>
+            <p class="para__index">Poulets frits aux cornflakes ou hamburger, frites maison et sauce aux choix, glace et boisson incluses </p>
+            <p class="para__index">9,90 €</p>
+        </div>
 
 </section>
     

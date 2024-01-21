@@ -252,9 +252,13 @@ body {
     padding: 15px;
 }
 
-.section__menu p, h3 {
+.section__menu h3 {
     font-family: var(--Para-font);
     color: var(--Text-color);
+}
+
+h3::first-letter {
+    text-transform: uppercase;
 }
 
 
