@@ -18,7 +18,9 @@
         <p class="para__index">Entrée + Plat + Dessert - 18,90€</p>
         <div class="day-menu">
             <p class="para__index"><?= $dayMenu["entre"]?></p>
+            <p>*****</p>
             <p class="para__index"><?= $dayMenu["plat"]?></p>
+            <p>*****</p>
             <p class="para__index"><?= $dayMenu["dessert"]?></p>
         </div>
     </div>

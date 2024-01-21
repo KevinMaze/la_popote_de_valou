@@ -260,9 +260,47 @@ body {
 h3::first-letter {
     text-transform: uppercase;
 }
-
-
 /*******************************************END RESTAURANT.PHP*******************************************/
+
+/*******************************************START VENTE_EMPORTER.PHP*************************************/
+.section__take-away {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section__take-away h2 {
+    align-self: center;
+}
+
+.section__take-away__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__take-away__info, 
+.take-aways, 
+.take-away__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--Text-color);
+    font-family: var(--Para-font);
+}
+
+.section__take-away__info img {
+    width: 150px;
+    margin: 15px 0;
+}
+
+.take-away__item p{
+    margin: 0;
+}
+
+
+/*******************************************END VENTE_EMPORTER.PHP***************************************/
 
 /* FOOTER */
 .footer {
@@ -388,6 +426,8 @@ h3::first-letter {
         margin-left: auto;
         margin-right: auto;
     }
+
+    /***************************************************START INDEX.PHP***************************************/
     /* SECTION INDEX */
     .title__custom {
         font-size: 3em;
@@ -448,6 +488,15 @@ h3::first-letter {
         justify-content: space-around;
     }
 
+    /***************************************************END INDEX.PHP*******************************************/
+
+    /***************************************************START VENTE_EMPORTER.PHP********************************/
+    .section__take-away__info {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /***************************************************END VENTE_EMPORTER.PHP**********************************/
     /* FOOTER */
     .footer__description {
         grid-template-columns: repeat(3, 1fr);
