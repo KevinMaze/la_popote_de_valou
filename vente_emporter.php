@@ -2,9 +2,6 @@
     require_once ('templates/header.php');
     require_once ('lib/menu.php');
     require_once ('lib/fetch/take_away.php');
-
-    // $takeAway = getTakeAway($pdo);
-    // $catagetories = getCategorie($pdo);
 ?>
 
 <div class="line flux"></div>

@@ -10,6 +10,6 @@ function getTakeAway (PDO $pdo):array|bool
     return $query->fetchAll(PDO::FETCH_ASSOC);
 };
 
-echo json_encode(getTakeAway($pdo), JSON_INVALID_UTF8_IGNORE);
+echo json_encode(getTakeAway($pdo), JSON_UNESCAPED_UNICODE);
 
 
