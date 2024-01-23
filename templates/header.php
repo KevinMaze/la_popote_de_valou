@@ -62,17 +62,17 @@
             <header class="header" style="background-image: url('<?= $mainMenu[$currentPage]["image"]?>')">
                 <img src="assets/logopopotte_edited.png" alt="logo de la popotte" class="logo__header">
                 <?php if ($mainMenu[$currentPage]["title"] === "Connection") { ?>
-                    <form method="post" class="logo__header form__login">
+                    <form method="post" class="logo__header form">
                         <?php foreach ($errors as $error){ ?>
                             <div class="alert alert-danger">
                                 <?= $error ?>
                             </div>
                         <?php } ?>
-                        <div class="form__login__email">
+                        <div class="form__div">
                             <label for="email">Email</label>
                             <input type="text" name="email">
                         </div>
-                        <div class="form__login__password">
+                        <div class="form__div">
                             <label for="password">Mot de passe</label>
                             <input type="password" name="password">
                         </div>

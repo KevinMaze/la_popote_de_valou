@@ -1,4 +1,4 @@
-.form__login {
+.form {
     background-color: rgba(245, 240, 246, 0.8);
     width: 60%;
     height: 40%;
@@ -12,22 +12,19 @@
     font-size: 1.2em;
 }
 
-.form__login__email,
-.form__login__password {
+.form__div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
 }
 
-.form__login__email input, 
-.form__login__password input {
+.form__div input{
     border: 1px solid var(--Text-color);
 }
 
-.form__login__email label, 
-.form__login__password label {
+.form__div label {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
