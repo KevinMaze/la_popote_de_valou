@@ -345,6 +345,26 @@ h3::first-letter {
     margin: 20px;
 }
 
+.section__cake a{
+    color: var(--link-color);
+}
+
+.section__cake h3 {
+    font-family: var(--Para-font);
+    color: var(--Text-color);
+}
+
+.section__cake__para {
+    font-family: var(--Para-font);
+    color: var(--Text-color);
+    font-size: 1em;
+}
+
+.section__cake__citation {
+    font-family: var(--Title-font);
+    font-size: 1.2em;
+}
+
 /***********************************END CAKE.PHP*******************************************************/
 
 /* FOOTER */
