@@ -31,6 +31,17 @@ body {
     font-size: 2em;
 }
 
+.full {
+    transition: transform 0.5s ease-in-out;
+}
+.full:hover {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+    transform: scale(1.2);
+}   
+
 /* NAVBAR */
 .navbar__custom{
     position: fixed;
@@ -363,6 +374,21 @@ h3::first-letter {
 .section__cake__citation {
     font-family: var(--Title-font);
     font-size: 1.2em;
+    color: var(--Title-color);
+}
+
+.section__cake__images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.section__cake__images img {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--border-radius-custom);
+    box-shadow: var(--box-shadow-custom);
 }
 
 /***********************************END CAKE.PHP*******************************************************/
@@ -482,6 +508,12 @@ h3::first-letter {
 
     /************************************END VENTE_EMPORTER.PHP*******************************/
 
+    /*********************START CAKE.PHP*******************************/
+    .section__cake__images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /************************END CAKE.PHP*******************************/
+
     /* FOOTER */
     .footer__info h4 {
         font-size: 1.2em;
@@ -571,7 +603,8 @@ h3::first-letter {
     .section__buffet__div,
     .section__take-away__div,
     .section__reservation,
-    .section__reservation__info {
+    .section__reservation__info,
+    .section__private__info {
         font-size: 1.2em;
     }
     
@@ -580,7 +613,26 @@ h3::first-letter {
         width: 250px;
         height: 300px;
     }
+
+    .section__private h3 {
+        font-size: 1.5em;
+    }
     /*******************************************END VENTE_EMPORTER.PHP**********************************/
+
+    /*********************START CAKE.PHP*******************************/
+    .section__cake__para {
+        font-size: 1.2em;
+    }
+
+    .section__cake__citation {
+        font-size: 1.5em;
+    }
+
+    .section__cake__images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /************************END CAKE.PHP*******************************/
+
     /* FOOTER */
     .footer__description {
         grid-template-columns: repeat(3, 1fr);

@@ -14,8 +14,19 @@
     <p class="section__cake__citation">"C'est un avec grand plaisir que je pâtisse selon vos demandes et  partage vos évènements à travers mes gâteaux"</p>
     <a href="contact.php" class="custom__button hover__custom">Page de contact</a>
 
-    <div>
-        <img src="" alt="">
+    <div class="section__cake__images">
+        <img src="./upload/cake/1 (1).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (2).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (3).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (4).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (5).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (6).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (7).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (8).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (9).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (10).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (11).JPG" alt="" class="full">
+        <img src="./upload/cake/1 (12).JPG" alt="" class="full">
     </div>
 
 </section>

@@ -64,8 +64,7 @@
     <div class="section__private__info">
         <p>À partir de 30 personnes</p>
         <p>Le restaurant est privatisable le soir et le samedi sur réservation avec un menu élaboré selon vos envies.
-        La Popotte vous ouvre ses portes pour passé un agréable moment privé.</p>
-        <p>Contactez nous à l'avance pour obtenir toutes informations supplémentaires.</p>
+        La Popotte vous ouvre ses portes pour passé un agréable moment privé. Contactez nous à l'avance pour obtenir toutes informations supplémentaires.</p>
     </div>
     <a href="contact.php" class="custom__button hover__custom">Page de Contact</a>
 
