@@ -6,7 +6,7 @@
 
 <div class="line flux"></div>
 
-<section class="section__take-away">
+<section class="section__take-away flux">
 
     <h2 class="title__custom">La popotte s'emporte</h2>
 
@@ -33,7 +33,7 @@
 </section>
 <div class="line flux"></div>
 
-<section class="section__buffet">
+<section class="section__buffet flux">
     
     <h2 class="title__custom">Buffet</h2>
 
@@ -44,12 +44,8 @@
             <img src="./assets/buffet_dessert.jpg" alt="">
         </div>
         <div class="section__buffet__div">
-            <p>Vous souhaitez organiser un événement ?</p>
-            <p>La Popotte s'occupe de tout !</p>
-            <p>Buffet salé ou sucré, à vous de choisir.</p>
+            <p>La Popotte vous propose pour vos évènements des buffets sucré, salé ( multitudes de bouchées, mignardises, toasts, verrines, tartes en sucré ou salé). Venez nous voir au restaurant pour en discuter et mettre en place un devis selon vos envies. </p>
         </div>
-        <button class="custom__button hover__custom" id="">Voir les buffets salés</button>
-        <button class="custom__button hover__custom" id="">Voir les buffets sucrés</button>
     </div>
 
     <div class="take_away">
@@ -60,14 +56,35 @@
 
 <div class="line flux"></div>
 
-<section class="section__reservation">
-    <div class="section__reservation__info">
-        <p>Réservez votre commande ou votre buffet par téléphone :</p>
-        <p>06.47.41.85.82 ou 04.66.54.10.67</p>
-        <p>Pour les commandes, reservations ou tout autres demandes, utiliser le formulaire.</p>
+<section class="section__private flux">
+
+    <h2 class="title__custom">Privatisation de salle</h2>
+    <h3>Repas d'entreprise - Mariage - Anniversaire</h3>
+    <div class="section__private__info">
+        <p>À partir de 30 personnes</p>
+        <p>Le restaurant est privatisable le soir et le samedi sur réservation avec un menu élaboré selon vos envies.
+        La Popotte vous ouvre ses portes pour passé un agréable moment privé.</p>
+        <p>Contactez nous à l'avance pour obtenir toutes informations supplémentaires.</p>
     </div>
 
-    <form action="" method="post" class="form form__reservation">
+</section>
+
+<div class="line flux"></div>
+
+<section class="section__reservation flux">
+
+    <div class="section__reservation__info">
+        <p>Pour votre commande, votre buffet, votre réservation de salle ou toute autres demandes, par téléphone :</p>
+        <p><a href="tel:+330647418582">06.47.41.85.82</a></p>
+        <p>ou</p>
+        <p><a href="tel:+330466541067">04.66.54.10.67</a></p>
+        <p>Par mail : </p>
+        <p><a href="mailto:valerie.lopez22@sfr.fr">valerie.lopez22@sfr.fr</a></p>
+        <p>Ou via le formulaire si dessous :</p>
+        <p>(Pour les commandes et reservation, merci de préciser l'heure et la date souhaité (min. 72h avant))</p>
+    </div>
+
+    <form action="" method="post" class="form">
         <div class="form__div">
             <label for="name">Nom</label>
             <input type="text" name="name" id="name">
@@ -87,6 +104,15 @@
         <div class="form__div">
             <label for="message">Message</label>
             <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form__div">
+            <label for="reason">Motif</label>
+            <select name="reason" id="reason">
+                <option value="menu à emporter">Menu à emporter</option>
+                <option value="buffet">Buffet</option>
+                <option value="réservation de salle">Réservation de salle</option>
+                <option value="Autres">Autres</option>
+            </select>
         </div>
         <div class="form__div">
             <label for="date">Date</label>

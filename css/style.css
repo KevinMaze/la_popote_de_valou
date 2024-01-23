@@ -266,20 +266,24 @@ h3::first-letter {
 .section__take-away, 
 .section__buffet, 
 .section__buffet__info, 
-.section__take-away__info {
+.section__take-away__info,
+.section__private {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.section__take-away h2, 
-.section__buffet h2 {
+/* .section__take-away h2, 
+.section__buffet h2, 
+.section__private h2 {
     align-self: center;
-}
+} */
 
 .section__take-away__div p, 
 .section__buffet__div p,
-.section__reservation__info p {
+.section__reservation__info p,
+.section__private__info p {
     margin: 0;
 }
 
@@ -287,14 +291,15 @@ h3::first-letter {
 .section__buffet__div,
 .section__take-away__div,
 .section__reservation,
-.section__reservation__info {
+.section__reservation__info,
+.section__private__info {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--Text-color);
     font-family: var(--Para-font);
     font-size: 1em;
-    margin: 20px 0;
+    margin: 20px 20px;
 }
 
 .section__take-away__images,
@@ -320,10 +325,11 @@ h3::first-letter {
     color: var(--link-color);
 }
 
-.form__reservation {
-    background-color: none;
+.section__private h3 {
+    margin: 20px;
+    font-size: 1.2em;
+    font-family: var(--Para-font);
 }
-
 
 
 /*******************************************END VENTE_EMPORTER.PHP***************************************/
