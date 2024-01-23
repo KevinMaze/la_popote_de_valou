@@ -321,7 +321,9 @@ h3::first-letter {
 }
 
 .section__buffet__info button,
-.section__take-away__info button {
+.section__take-away__info button,
+.section__buffet a, 
+.section__private a{
     color: var(--link-color);
 }
 
@@ -333,6 +335,17 @@ h3::first-letter {
 
 
 /*******************************************END VENTE_EMPORTER.PHP***************************************/
+
+/***********************************START CAKE.PHP*****************************************************/
+.section__cake {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+/***********************************END CAKE.PHP*******************************************************/
 
 /* FOOTER */
 .footer {

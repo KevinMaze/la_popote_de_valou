@@ -18,16 +18,9 @@ $mainMenu = [
         "include" => true
     ],
     "vente_emporter.php" => [
-        "title" => "La Popotte s'emporte",
-        "head_tile" => "La Popotte s'emporte",
-        "meta_description" => "Vente à emporter, avec des produit frais de la popotte",
-        "image"  => "assets/emporte.jpg",
-        "include" => true
-    ],
-    "salle.php" => [
-        "title" => "Privatisation de salle",
-        "head_tile" => "Privatisation de salle",
-        "meta_description" => "Privatisation de salle pour vos évènements et buffets",
+        "title" => "La Popotte s'emporte et se privatise",
+        "head_tile" => "La Popotte s'emporte et se privatise",
+        "meta_description" => "Vente à emporter, buffet avec des produit frais de la popotte",
         "image"  => "assets/table_salle.jpg",
         "include" => true
     ],
@@ -42,7 +35,7 @@ $mainMenu = [
         "title" => "Contacter la Popotte",
         "head_tile" => "Contacter la Popotte",
         "meta_description" => "Contactez la popotte pour vos réservations et commandes",
-        "image"  => "assets/contact.jpg",
+        "image"  => "assets/resa.jpg",
         "include" => true
     ],
     "login.php" => [
