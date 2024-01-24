@@ -1,2 +1,34 @@
-@import "style.css";
+@import "./style.css";
 
+/***************START INDEX_ADMIN***************/
+/* NAVBAR */
+.header__custom {
+    font-family: var(--Para-font);
+}
+
+.header__custom img {
+    width: 50px;
+}
+
+.sidebar__custom {
+    height: 100vh;
+    position: fixed;
+    font-family: var(--Para-font);
+    border: 1px solid var(--Text-color);
+}
+
+.navbar__footer__custom {
+    color: var(--Para-color);
+}
+
+.navbar__footer__custom li {
+    margin-top: 15px;
+}
+
+.navbar__footer__custom a,
+.sidebar__custom a {
+    font-size: 0.8em;
+}
+
+
+/***************END INDEX_ADMIN***************/

@@ -7,70 +7,120 @@
 
 <!DOCTYPE html>
 <html lang="fr-FR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Administration</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style_admin.css">
+        <link rel="stylesheet" href="../css/button.css">
+        <link rel="stylesheet" href="../css/hover.css">
+        <title>Administration</title>
+    </head>
     <body>
-        <section class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                <span class="fs-4">Sidebar</span>
-            </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page"><i class="bi bi-house-door me-2"></i>
-                    Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                    Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                    Orders
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                    Products
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                    Customers
-                    </a>
-                </li>
-            </ul>
-            <hr>
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../assets/logopopotte_edited.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong><?= $_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname']?></strong>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="../index.php">Revenir au site</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="../templates/deconnection.php">Déconnection</a></li>
-                </ul>
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow header__custom" data-bs-theme="dark">
+        <img src="../assets/logopopotte_edited.png" alt="">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="../index.php">La Popotte de Valou</a>
+        <ul class="navbar-nav flex-row d-md-none">
+            <li class="nav-item text-nowrap">
+                <button class="nav-link px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+            </li>
+        </ul>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar border-right col-md-3 col-lg-2 p-0 sidebar__custom">
+                <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+                    </div>
+                    <div class="d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="./index_admin.php">
+                                <i class="bi bi-house-fill"></i>
+                                    Google Analytics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-calendar-day"></i>
+                                    Menu du jour
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-book"></i>
+                                    Carte
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-basket"></i>
+                                    Buffet
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-images"></i>
+                                    Images
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-person"></i>
+                                    Comptes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-hourglass"></i>
+                                    Horaires
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <i class="bi bi-person-lines-fill"></i>
+                                    Contacts
+                                </a>
+                            </li>
+                        </ul>
+
+                        <hr class="my-3">
+
+                        <ul class="flex-column mb-auto navbar__footer__custom">
+                            <li>
+                                <p class="d-flex align-items-center gap-2"><i class="bi bi-person"></i><?= $_SESSION["user"]["firstname"]?> <?= $_SESSION["user"]["lastname"]?></p>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center gap-2 custom__button hover__custom" href="../index.php">
+                                <i class="bi bi-door-open"></i>
+                                    Retour
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center gap-2 custom__button hover__custom" href="../templates/deconnection.php">
+                                <i class="bi bi-door-closed"></i>
+                                    Déconnexion
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 300vh">
+                <section>
+                    <h1>osfhviuhfv</h1>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
-
 </html>
-
-
