@@ -6,7 +6,7 @@ function getDayMenu (PDO $pdo):array|bool
     $sql = ("SELECT * FROM day_menu");
     $query = $pdo->prepare($sql);
     $query->execute();
-    $dayMenu = $query->fetch(PDO::FETCH_ASSOC);
+    $dayMenu = $query->fetchAll(PDO::FETCH_ASSOC);
     return $dayMenu;
 }
 

@@ -31,18 +31,9 @@
 <section class="section__menu flux">
 
     <?php include ('templates/restaurant_part.php'); ?>
-    
-    <h2 class="title__custom">Menu Enfant</h2>
-
-        <div>
-            <h3>Le menu des petits héros</h3>
-            <p class="para__index">Poulets frits aux cornflakes ou hamburger, frites maison et sauce aux choix, glace et boisson incluses </p>
-            <p class="para__index">9,90 €</p>
-        </div>
 
 </section>
     
-    <div class="line flux"></div>
 <?php
     require_once ('templates/footer.php');
 ?>

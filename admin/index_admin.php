@@ -2,7 +2,7 @@
     require_once ("templates-admin/header-admin.php");
 ?>
     <section>
-        <h1>osfhviuhfv</h1>
+        <h1>Google Analytics (Trop bien)</h1>
     </section>
 
 <?php

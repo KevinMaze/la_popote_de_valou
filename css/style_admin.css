@@ -1,5 +1,20 @@
 @import "./style.css";
 
+.button__custom {
+    color: var(--Text-color);
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-family: var(--Para-font);
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.button__custom:hover {
+    background-color: var(--link-color);
+    color: var(--Text-color);
+}
+
 /***************START INDEX_ADMIN***************/
 /* NAVBAR */
 .header__custom {
@@ -35,6 +50,31 @@
 .line-navbar {
     color: var(--Title-color);
 }
-
-
 /***************END INDEX_ADMIN***************/
+
+/**************START DAY-MENU.php**************/
+.section__gestion__day-menu {
+    font-family: var(--Para-font);
+    color: var(--Para-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section__gestion__day-menu h1,
+.section__gestion__day-menu h2 {
+    align-self: center;
+    margin: 20px;
+    text-decoration: underline;
+}
+
+/**************END DAY-MENU.php**************/
+
+/****************MEDIA QUERY****************/
+@media screen and (max-width : 768px){
+    .disable {
+        display: none;
+    }
+}
+
+/***************END MEDIA QUERY*************/
