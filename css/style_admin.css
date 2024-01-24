@@ -7,27 +7,33 @@
 }
 
 .header__custom img {
-    width: 50px;
+    width: 60px;
 }
 
 .sidebar__custom {
-    height: 100vh;
     position: fixed;
     font-family: var(--Para-font);
     border: 1px solid var(--Text-color);
 }
 
-.navbar__footer__custom {
-    color: var(--Para-color);
-}
-
-.navbar__footer__custom li {
-    margin-top: 15px;
-}
-
 .navbar__footer__custom a,
 .sidebar__custom a {
     font-size: 0.8em;
+    color: var(--link-color);
+}
+
+.sidebar__custom p {
+    font-size: 0.8em;
+    color: var(--Title-color);
+}
+
+.siderbar__custom__left {
+    background-color: var(--Text-color);
+    height: 100vh;
+}
+
+.line-navbar {
+    color: var(--Title-color);
 }
 
 
