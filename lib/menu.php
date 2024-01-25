@@ -58,6 +58,15 @@ function getRecipeByCategorie (PDO $pdo):array|bool
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// Récupérer les recettes par catégorie
+function getRecipeByCategorieId (PDO $pdo):array|bool 
+{
+    $sql = "SELECT * FROM categorie INNER JOIN recipe ON categorie.id_categorie = recipe.id_categorie";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 
 /**************END CARTE/MENU ************/
