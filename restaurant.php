@@ -6,6 +6,9 @@
     $categories = getCategorie($pdo);
 
     $recipes = getRecipeByCategorie($pdo);
+
+    require_once ('templates/date_function.php');
+
 ?>
 
 <div class="line flux"></div>
@@ -17,11 +20,15 @@
         <p class="para__index">Entrée + Plat où Plat + Dessert - 15,90€</p>
         <p class="para__index">Entrée + Plat + Dessert - 18,90€</p>
         <div class="day-menu">
-            <p class="para__index"><?= $dayMenu["entre"]?></p>
-            <p>*****</p>
-            <p class="para__index"><?= $dayMenu["plat"]?></p>
-            <p>*****</p>
-            <p class="para__index"><?= $dayMenu["dessert"]?></p>
+            <?php foreach ($dayMenu as $key => $dayMenu) {
+                if(WeekDay(time()) === $dayMenu["day"]){?>
+                <p class="para__index"><?= $dayMenu["entre"]?></p>
+                <p>*****</p>
+                <p class="para__index"><?= $dayMenu["plat"]?></p>
+                <p>*****</p>
+                <p class="para__index"><?= $dayMenu["dessert"]?></p>
+                <?php } ?>
+            <?php } ?>
         </div>
     </div>
 </section>

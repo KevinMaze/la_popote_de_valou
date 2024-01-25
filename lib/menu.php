@@ -1,6 +1,7 @@
 <?php
+/********************* START DAY MENU************/
 
-// Récupération du menu du jour
+// Récupération des menus du jour
 function getDayMenu (PDO $pdo):array|bool
 {
     $sql = ("SELECT * FROM day_menu");
@@ -10,6 +11,34 @@ function getDayMenu (PDO $pdo):array|bool
     return $dayMenu;
 }
 
+// Récupération daymenu avec id
+function dayMenuById (PDO $pdo, int $id):array|bool
+{
+    $sql = ("SELECT * FROM day_menu WHERE id_day_menu = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    $dayMenu = $query->fetch(PDO::FETCH_ASSOC);
+    return $dayMenu;
+}
+
+// Modification daymenu
+function changeDayMenu (PDO $pdo, int $id, string $day, string $entre, string $plat, string $dessert):bool
+{
+    $sql = ("UPDATE day_menu SET day = :day, entre = :entre, plat = :plat, dessert = :dessert WHERE id_day_menu = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->bindValue(":day", $day, PDO::PARAM_STR);
+    $query->bindValue(":entre", $entre, PDO::PARAM_STR);
+    $query->bindValue(":plat", $plat, PDO::PARAM_STR);
+    $query->bindValue(":dessert", $dessert, PDO::PARAM_STR);
+    return $query->execute();
+}
+
+/***************END DAY MENU ****************/
+
+
+/**************START CARTE/MENU ************/
 
 // Récupérer les catégories
 function getCategorie (PDO $pdo):array|bool 
@@ -28,3 +57,7 @@ function getRecipeByCategorie (PDO $pdo):array|bool
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
+
+
+
+/**************END CARTE/MENU ************/
