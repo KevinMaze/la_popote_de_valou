@@ -1,7 +1,6 @@
 <?php
     require_once ('templates/header.php');
     require_once ('lib/menu.php');
-    // require_once ('lib/fetch/take_away.php');
 ?>
 
 <div class="line flux"></div>
@@ -23,11 +22,7 @@
             <p>A retirer au comptoir</p>
             <p>11h45 - 14h / 19h00 - 22h00</p>
         </div>
-        <button class="custom__button hover__custom" id="button_take_away">Voir la carte</button>
-    </div>
-
-    <div class="take_away">
-        <!-- <?php include ('templates/take-away-part.php')?> -->
+        <button class="custom__button hover__custom" id="button_take_away">Voir la carte à emporter</button>
     </div>
     
 </section>

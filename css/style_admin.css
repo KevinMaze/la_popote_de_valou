@@ -70,6 +70,23 @@
 
 /**************END DAY-MENU.php**************/
 
+/**************START CARTE.PHP **************/
+.section__gestion__carte {
+    display: flex;
+    font-family: var(--Para-font);
+    color: var(--Para-color);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section__gestion__carte h1 {
+    align-self: center;
+    margin: 20px;
+    text-decoration: underline;
+}
+
+/**************END CARTE.PHP **************/
+
 /****************MEDIA QUERY****************/
 @media screen and (max-width : 768px){
     .disable {

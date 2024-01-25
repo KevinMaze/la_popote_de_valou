@@ -53,7 +53,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="carte.php">
                                 <i class="bi bi-book"></i>
                                     Carte
                                 </a>

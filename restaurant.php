@@ -22,12 +22,14 @@
         <div class="day-menu">
             <?php foreach ($dayMenu as $key => $dayMenu) {
                 if(WeekDay(time()) === $dayMenu["day"]){?>
-                <p class="para__index"><?= $dayMenu["entre"]?></p>
+                <p class="para__index"><?= htmlentities($dayMenu["entre"])?></p>
                 <p>*****</p>
-                <p class="para__index"><?= $dayMenu["plat"]?></p>
+                <p class="para__index"><?= htmlentities($dayMenu["plat"])?></p>
                 <p>*****</p>
-                <p class="para__index"><?= $dayMenu["dessert"]?></p>
-                <?php } ?>
+                <p class="para__index"><?= htmlentities($dayMenu["dessert"])?></p>
+                <?php } else{ ?>
+                <p class="para__index">Aucun menu du jour n'est disponible</p>
+                    <?php } ?>
             <?php } ?>
         </div>
     </div>

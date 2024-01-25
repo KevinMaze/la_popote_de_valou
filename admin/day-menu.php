@@ -5,7 +5,11 @@
     $dayMenus = getDayMenu($pdo);
 ?>
     <section class="section__gestion__day-menu">
+
         <h1>Menu du jour</h1>
+
+        <hr>
+
         <table class="table table-hover table__custom">
             <tcaption>Liste des menus du jour</tcaption>
             <thead>
@@ -48,37 +52,7 @@
                 <?php } ?>
             </tbody>
         </table>
-
         <hr>
-
-        <!-- <h2>Ajouter un menu du jour</h2>
-
-        <form action="" method="post" id="form_day-menu">
-            <div class="mb-3">
-                <label for="day" class="form-label">Jour</label>
-                <select class="form-select" id="day" name="day">
-                    <option selected>Choisir le jour</option>
-                    <?php foreach ($dayMenus as $key => $dayMenu) {?>
-                        <option value="<?= $dayMenu["id_day_menu"] ?>"><?= $dayMenu["day"] ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            
-            <div class="mb-3">
-                <label for="entre" class="form-label">Entrée</label>
-                <input class="form-select" id="entre" name="entre"></input>
-            </div>
-            <div class="mb-3">
-                <label for="plat" class="form-label">Plat</label>
-                <input class="form-select" id="plat" name="plat"></input>
-            </div>
-            <div class="mb-3">
-                <label for="dessert" class="form-label">Dessert</label>
-                <input class="form-select" id="dessert" name="dessert"></input>
-            </div>
-            <input type="submit" class="button__custom" value="Ajouter">
-        </form> -->
-
     </section>
 
     <script src="../js/admin-js/day_menu.js"></script>
