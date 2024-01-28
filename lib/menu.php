@@ -67,6 +67,19 @@ function getRecipeByCategorieId (PDO $pdo):array|bool
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function addRecipe (PDO $pdo, string $name_recipe, string $description, float $price, string $take_away, int $id_user, int $id_categorie):bool
+{
+    $sql = "INSERT INTO recipe (name_recipe, description, price, take_away, id_user, id_categorie) VALUE (:name_recipe, :description, :price, :take_away, :id_user, :id_categorie)";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":name_recipe", $name_recipe, PDO::PARAM_STR);
+    $query->bindValue(":description", $description, PDO::PARAM_STR);
+    $query->bindValue(":price", $price, PDO::PARAM_STR);
+    $query->bindValue(":take_away", $take_away, PDO::PARAM_STR);
+    $query->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+    $query->bindValue(":id_categorie", $id_categorie, PDO::PARAM_INT);
+    return $query->execute();
+}
+
 
 
 /**************END CARTE/MENU ************/
