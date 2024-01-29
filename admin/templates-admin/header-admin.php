@@ -58,6 +58,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="categorie.php">
+                                <i class="bi bi-bookmark"></i>
+                                    Catégories
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center gap-2 custom__button hover__custom" href="#">
                                 <i class="bi bi-basket"></i>
                                     Buffet

@@ -5,9 +5,9 @@
 
     $categories = getCategorie($pdo);
 
-    $recipes = getRecipeByCategorie($pdo);
+    $recipes = getRecipe($pdo);
 
-    $recipeByCategorie = getRecipeByCategorieId($pdo);
+    $recipeWithCategories = getRecipeWithCategorie($pdo);
 
     $messages = [];
     $errors = [];
@@ -21,7 +21,9 @@
             } else {
                 $errors[] = "Erreur lors de l'ajout de la recette";
             }
-            echo "<meta http-equiv='refresh' content='0';URL=".$_SERVER['PHP_SELF'].".php?refresh=3000'>";
+            sleep(3);
+            echo "<meta http-equiv='refresh' content='0';URL=".$_SERVER['PHP_SELF'].".php?refresh=3";
+            exit;
         };
     }catch (PDOException $e) {
         echo $e->getMessage();
@@ -34,18 +36,29 @@
 
     <hr>
 
-    <?php foreach ($categories as $key => $categorie) {?>
-        <h2 class=""><?= $categorie['name_categorie'] ?></h2>
-            <?php foreach ($recipes as $key => $recipe) {
-                if ($recipe['id_categorie'] == $categorie['id_categorie']) {?>
-                    <div>
-                        <h3><?= $recipe["name_recipe"] ?></h3>
-                        <p class="para__index"><?= $recipe["description"] ?> </p>
-                        <p class="para__index"><?= $recipe["price"] ?> €</p>
-                    </div>
+    <table class="table table-hover table__custom">
+        <tcaption>Liste des recettes</tcaption>
+        <thead>
+            <tr>
+                <th scope="col" class="form__th">Nom</th>
+                <th scope="col" class="disable">Prix</th>
+                <th class="disable" scope="col">Catégorie</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($recipeWithCategories as $key => $recipeWithCategorie) {?>
+                <tr>
+                    <td class="form__th"><?= $recipeWithCategorie["name_recipe"] ?></td>
+                    <td  class="disable"><?= $recipeWithCategorie["price"] ?> €</td>
+                    <td class="disable"><?= $recipeWithCategorie["name_categorie"] ?></td>
+                    <td>Supprimer / modifier</td>
+                </tr>
             <?php } ?>
-        <?php } ?>
-    <?php } ?>
+        </tbody>
+    </table>
+
+
 
     <hr>
 

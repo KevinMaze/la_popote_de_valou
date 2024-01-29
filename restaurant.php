@@ -5,7 +5,7 @@
 
     $categories = getCategorie($pdo);
 
-    $recipes = getRecipeByCategorie($pdo);
+    $recipes = getRecipe($pdo);
 
     require_once ('templates/date_function.php');
 
@@ -27,7 +27,7 @@
                 <p class="para__index"><?= htmlentities($dayMenu["plat"])?></p>
                 <p>*****</p>
                 <p class="para__index"><?= htmlentities($dayMenu["dessert"])?></p>
-                <?php } else{ ?>
+                <?php } else if ($dayMenu["day"] === ""){ ?>
                 <p class="para__index">Aucun menu du jour n'est disponible</p>
                     <?php } ?>
             <?php } ?>

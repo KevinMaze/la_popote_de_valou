@@ -49,8 +49,17 @@ function getCategorie (PDO $pdo):array|bool
     return $query->fetchAll(PDO::FETCH_ASSOC);
 };
 
+// Ajouter une catégorie
+function addCategorie (PDo $pdo, string $name_categorie):bool
+{
+    $sql = "INSERT INTO categorie (name_categorie) VALUE (:name_categorie)";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":name_categorie", $name_categorie, PDO::PARAM_STR);
+    return $query->execute();
+}
+
 // Récupérer les recettes
-function getRecipeByCategorie (PDO $pdo):array|bool 
+function getRecipe (PDO $pdo):array|bool 
 {
     $sql = ('SELECT * FROM recipe');
     $query = $pdo->prepare($sql);
@@ -58,14 +67,15 @@ function getRecipeByCategorie (PDO $pdo):array|bool
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Récupérer les recettes par catégorie
-function getRecipeByCategorieId (PDO $pdo):array|bool 
+// Récupérer les recettes avec categorie
+function getRecipeWithCategorie (PDO $pdo):array|bool 
 {
-    $sql = "SELECT * FROM categorie INNER JOIN recipe ON categorie.id_categorie = recipe.id_categorie";
+    $sql = ('SELECT * FROM recipe INNER JOIN categorie ON recipe.id_categorie = categorie.id_categorie');
     $query = $pdo->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
+
 
 function addRecipe (PDO $pdo, string $name_recipe, string $description, float $price, string $take_away, int $id_user, int $id_categorie):bool
 {
