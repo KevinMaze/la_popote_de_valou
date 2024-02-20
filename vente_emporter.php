@@ -1,6 +1,7 @@
 <?php
     require_once ('templates/header.php');
     require_once ('lib/menu.php');
+    // require_once ('lib/take_away.php');
 ?>
 
 <div class="line flux"></div>
@@ -24,6 +25,10 @@
         </div>
         <button class="custom__button hover__custom" id="button_take_away">Voir la carte à emporter</button>
     </div>
+
+    <div id="take_away">
+        <!-- <?php include ('templates/take-away-part.php')?> -->
+    </div>
     
 </section>
 <div class="line flux"></div>
@@ -44,10 +49,6 @@
     </div>
     <a href="contact.php" class="custom__button hover__custom">Page de Contact</a>
 
-    <div class="take_away">
-    <!-- <?php include ('templates/take-away-part.php')?> -->
-    </div>
-
 </section>
 
 <div class="line flux"></div>
@@ -67,7 +68,7 @@
 
 <div class="line flux"></div>
 
-<script src="js/take_away.js"></script>
+<script src="js/take_away.js" async></script>
 <?php
     require_once ('templates/footer.php');
 ?>

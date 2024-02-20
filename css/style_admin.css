@@ -64,7 +64,6 @@
 .section__gestion__day-menu h1,
 .section__gestion__day-menu h2 {
     align-self: center;
-    margin: 20px;
     text-decoration: underline;
 }
 
@@ -81,7 +80,6 @@
 
 .section__gestion__carte h1 {
     align-self: center;
-    margin: 20px;
     text-decoration: underline;
 }
 /**************END CARTE.PHP **************/

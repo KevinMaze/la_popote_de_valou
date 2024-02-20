@@ -70,7 +70,7 @@ function getRecipe (PDO $pdo):array|bool
 // Récupérer les recettes avec categorie
 function getRecipeWithCategorie (PDO $pdo):array|bool 
 {
-    $sql = ('SELECT * FROM recipe INNER JOIN categorie ON recipe.id_categorie = categorie.id_categorie');
+    $sql = ('SELECT * FROM recipe INNER JOIN categorie ON recipe.id_categorie = categorie.id_categorie ORDER BY name_recipe ASC');
     $query = $pdo->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);

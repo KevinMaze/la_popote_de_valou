@@ -8,9 +8,7 @@
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
     $errors = [];
     require_once ('request/request_user_login.php');
-
 ?>
-
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
