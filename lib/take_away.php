@@ -4,7 +4,7 @@ require_once ("pdo.php");
 
 function getTakeAway (PDO $pdo):array|bool
 {
-    $sql = ("SELECT * FROM recipe WHERE take_away = 'yes'");
+    $sql = ("SELECT * FROM recipe WHERE take_away = 'yes' ORDER BY name_recipe ASC");
     $query = $pdo->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);

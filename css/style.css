@@ -285,12 +285,6 @@ h3::first-letter {
     align-items: center;
 }
 
-/* .section__take-away h2, 
-.section__buffet h2, 
-.section__private h2 {
-    align-self: center;
-} */
-
 .section__take-away__div p, 
 .section__buffet__div p,
 .section__reservation__info p,
@@ -344,6 +338,36 @@ h3::first-letter {
     font-family: var(--Para-font);
 }
 
+.button__hidden {
+    display: none;
+}
+
+.section__take-away__card {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 15px;
+}
+
+.section__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border: 1px solid var(--Title-color);
+}
+
+.card-title {
+    font-family: var(--Title-font);
+    text-decoration: underline;
+}
+
+.card-text {
+    font-family: var(--Para-font);
+    color: var(--Text-color);
+    font-size: 1em;
+    padding: 15px;
+}
 
 /*******************************************END VENTE_EMPORTER.PHP***************************************/
 
@@ -505,6 +529,9 @@ h3::first-letter {
     .section__buffet__info__images{
         flex-direction: row;
     }
+    .section__take-away__card {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     /************************************END VENTE_EMPORTER.PHP*******************************/
 
@@ -617,6 +644,10 @@ h3::first-letter {
     .section__private h3 {
         font-size: 1.5em;
     }
+    .section__take-away__card{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     /*******************************************END VENTE_EMPORTER.PHP**********************************/
 
     /*********************START CAKE.PHP*******************************/
