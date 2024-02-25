@@ -29,8 +29,8 @@
             <h2 class="title__custom">Nos Actualitées</h2>
             <p class="para__actu">Suivez ici l'actualité de la Popotte! Retrouvez toutes nos publications Facebook et Instagram ici</p>
             <div class="section__actu__img">
-                <img src="assets/fb__black.png" alt="">
-                <img src="assets/insta__black.png" alt="">
+                <a href="https://www.facebook.com/lapopottedevalouales" target="_blank"><img src="assets/fb__black.png" alt="imade de facebook"></a>
+                <a href="https://www.instagram.com/lapopottedevalou/" target="_blank"><img src="assets/insta__black.png" alt="image d'instagram"></a>
             </div>
             <p class="para__actu">Abonnez-vous à nos réseaux !</p>
         </section>

@@ -16,7 +16,7 @@
         <p>(Pour les commandes et reservation, merci de préciser l'heure et la date souhaité (min. 72h avant))</p>
     </div>
     
-    <form action="" method="post" class="form">
+    <form action="" method="post" class="form" id="contact">
         <div class="form__div">
             <label for="name">Nom</label>
             <input type="text" name="name" id="name">

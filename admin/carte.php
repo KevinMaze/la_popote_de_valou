@@ -29,7 +29,7 @@
     }
 ?>
 
-<section class="section__gestion__carte">
+<section class="section__gestion__carte"> 
 
     <h1>Carte</h1>
 
@@ -51,7 +51,26 @@
                     <td class="form__th"><?= $recipeWithCategorie["name_recipe"] ?></td>
                     <td  class="disable"><?= $recipeWithCategorie["price"] ?> €</td>
                     <td class="disable"><?= $recipeWithCategorie["name_categorie"] ?></td>
-                    <td>Supprimer / modifier</td>
+                    <td>Modifier | 
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal<?= $recipeWithCategorie["id_recipe"] ?>" class="button__custom">Supprimer</button>
+                            <div class="modal fade" id="exampleModal<?= $recipeWithCategorie["id_recipe"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="title-modal" id="exampleModalLabel">Suppression de l'article <?= $recipeWithCategorie["id_recipe"] ?></h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Attention, vous êtes sur le point de supprimer l'article <?= $recipeWithCategorie["name_recipe"] ?>. La suppression est définitive.
+                                            Etes-vous sûr ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="button__custom btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="button" class="button__custom"><a href="delete.php?id=<?= $recipeWithCategorie["id_recipe"] ?>">Supprimer</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></td>
                 </tr>
             <?php } ?>
         </tbody>

@@ -70,13 +70,13 @@ function getRecipe (PDO $pdo):array|bool
 // Récupérer les recettes avec categorie
 function getRecipeWithCategorie (PDO $pdo):array|bool 
 {
-    $sql = ('SELECT * FROM recipe INNER JOIN categorie ON recipe.id_categorie = categorie.id_categorie ORDER BY name_recipe ASC');
+    $sql = ('SELECT * FROM recipe INNER JOIN categorie ON recipe.id_categorie = categorie.id_categorie ORDER BY name_categorie ASC');
     $query = $pdo->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
+// Ajouter une recette
 function addRecipe (PDO $pdo, string $name_recipe, string $description, float $price, string $take_away, int $id_user, int $id_categorie):bool
 {
     $sql = "INSERT INTO recipe (name_recipe, description, price, take_away, id_user, id_categorie) VALUE (:name_recipe, :description, :price, :take_away, :id_user, :id_categorie)";
@@ -87,6 +87,25 @@ function addRecipe (PDO $pdo, string $name_recipe, string $description, float $p
     $query->bindValue(":take_away", $take_away, PDO::PARAM_STR);
     $query->bindValue(":id_user", $id_user, PDO::PARAM_INT);
     $query->bindValue(":id_categorie", $id_categorie, PDO::PARAM_INT);
+    return $query->execute();
+}
+
+// Récupérer une recette avec id
+function getRecipeById (PDO $pdo, int $id):array|bool
+{
+    $sql = ("SELECT * FROM recipe WHERE id_recipe = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
+
+// Supprimer une recette
+function deleteRecipe(PDO $pdo, int $id):bool
+{
+    $sql = ("DELETE FROM recipe WHERE id_recipe = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
     return $query->execute();
 }
 

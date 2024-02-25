@@ -84,6 +84,15 @@
 }
 /**************END CARTE.PHP **************/
 
+/*************START DELETE.PHP**************/
+.section__delete h1 {
+    font-family: var(--Para-font);
+    color: var(--Para-color);
+    text-align: center;
+    text-decoration: underline;
+}
+/*************END DELETE.PHP**************/
+
 /****************MEDIA QUERY****************/
 @media screen and (max-width : 768px){
     .disable {

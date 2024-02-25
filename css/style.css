@@ -266,6 +266,7 @@ body {
 .section__menu h3 {
     font-family: var(--Para-font);
     color: var(--Text-color);
+    text-decoration: underline;
 }
 
 h3::first-letter {

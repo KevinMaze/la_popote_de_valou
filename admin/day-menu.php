@@ -55,7 +55,6 @@
         <hr>
     </section>
 
-    <script src="../js/admin-js/day_menu.js"></script>
 <?php
     require_once ("templates-admin/footer-admin.php");
 ?>

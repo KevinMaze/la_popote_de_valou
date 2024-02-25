@@ -23,7 +23,6 @@
                 <div class="footer__nav">
                     <p><a href="index.php">La Popotte</a></p>
                     <p><a href="vente_emporter.php">La Popotte s'emporte</a></p>
-                    <p><a href="salle.php">Privatisation de salle</a></p>
                     <p><a href="cake.php">La cheffe pâtisse</a></p>
                     <p><a href="contact.php">Contact</a></p>
                 </div>
@@ -33,7 +32,7 @@
                     <p>Email: <a href="mailto:">valerie******@sfr.fr</a></p>
                     <p>Téléphone: <a href="tel:+330647418582">06.47.41.85.82</a></p>
                     <p><a href="tel:+330466541067">04.66.54.10.67</a></p>
-                    <p><a href="#">Formulaire de contacts</a></p>
+                    <p><a href="contact.php#contact">Formulaire de contacts</a></p>
                 </div>
             </div>
 
