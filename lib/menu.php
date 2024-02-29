@@ -106,9 +106,38 @@ function deleteRecipe(PDO $pdo, int $id):bool
     $sql = ("DELETE FROM recipe WHERE id_recipe = :id");
     $query = $pdo->prepare($sql);
     $query->bindValue(":id", $id, PDO::PARAM_INT);
-    return $query->execute();
+    $query->execute();
+
+    if($query->rowCount() > 0){
+        return true;
+    }else{
+        return false;
+    }
 }
 
+// Récupérer une catégorie avec id
+function getCategorieById (PDO $pdo, int $id):array|bool
+{
+    $sql = ("SELECT * FROM categorie WHERE id_categorie = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
 
+// Supprimer une catégorie
+function deleteCategorie(PDO $pdo, int $id):bool
+{
+    $sql = ("DELETE FROM categorie WHERE id_categorie = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    
+    if($query->rowCount() > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 /**************END CARTE/MENU ************/

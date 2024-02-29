@@ -418,6 +418,40 @@ h3::first-letter {
 
 /***********************************END CAKE.PHP*******************************************************/
 
+/********************************START CONTACT.PHP****************************************************/
+.section__opinion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.form__contact,
+.form__opinion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.form__contact__div,
+.form__opinion__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+
+.form__contact textarea,
+.form__opinion textarea {
+    resize: none;
+    height: 150px;
+}
+
+/********************************END CONTACT.PHP****************************************************/
+
 /* FOOTER */
 .footer {
     background-color: var(--Title-color);
@@ -541,6 +575,14 @@ h3::first-letter {
         grid-template-columns: repeat(2, 1fr);
     }
     /************************END CAKE.PHP*******************************/
+
+    /*************************************START CONTACT.PHP****************************************/
+    .form__contact__div,
+    .form__opinion__div{
+        width: 500px;
+    }
+
+    /******************************END CONTACT.PHP**************************************************/
 
     /* FOOTER */
     .footer__info h4 {

@@ -1,7 +1,34 @@
 <?php
     require_once ('templates/header.php');
+    require_once ('lib/contact-opinion.php');
+
+    $messages = [];
+    $errors = [];
+
+    try {
+        if(isset($_POST["button_contact"])){
+            $result = addContact($pdo, htmlspecialchars($_POST["lastname"], ENT_QUOTES), htmlspecialchars($_POST["firstname"], ENT_QUOTES), htmlspecialchars($_POST["email"], ENT_QUOTES), htmlspecialchars($_POST["phone"], ENT_QUOTES), htmlspecialchars($_POST["commentary"], ENT_QUOTES), htmlspecialchars($_POST["reason"], ENT_QUOTES), htmlspecialchars($_POST["date_reservation"], ENT_QUOTES), htmlspecialchars($_POST["hourly_reservation"], ENT_QUOTES), null);
+            if($result){
+                $messages[] = "Votre message a bien été envoyé, nous vous répondrons dans les plus brefs délais, redirection dans 3 secondes";
+            }else{
+                $errors[] = "Erreur lors de l'envoi de votre message, redirection dans 3 secondes";
+            }
+            echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
+        }
+
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
 ?>
 <div class="line flux"></div>
+
+<?php foreach ($messages as $message) { ?>
+    <div class="alert alert-success"><?= $message; ?></div>
+    <?php }?>
+<?php foreach ($errors as $error) { ?>
+    <div class="alert alert-danger"><?= $error; ?></div>
+<?php }?>
 
 <section class="section__reservation flux">
     
@@ -16,28 +43,28 @@
         <p>(Pour les commandes et reservation, merci de préciser l'heure et la date souhaité (min. 72h avant))</p>
     </div>
     
-    <form action="" method="post" class="form" id="contact">
-        <div class="form__div">
-            <label for="name">Nom</label>
-            <input type="text" name="name" id="name">
+    <form method="post" class="form__contact" id="contact">
+        <div class="form__contact__div">
+            <label for="lastname">Nom</label>
+            <input type="text" name="lastname" id="name" require>
         </div>
-        <div class="form__div">
+        <div class="form__contact__div">
             <label for="firstname">Prénom</label>
-            <input type="text" name="firstname" id="firstname">
+            <input type="text" name="firstname" id="firstname" require>
         </div>
-        <div class="form__div">
+        <div class="form__contact__div">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" require>
         </div>
-        <div class="form__div">
+        <div class="form__contact__div">
             <label for="phone">Téléphone</label>
-            <input type="tel" name="phone" id="phone">
+            <input type="tel" name="phone" id="phone" require>
         </div>
-        <div class="form__div">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <div class="form__contact__div">
+            <label for="commentary">Message</label>
+            <textarea name="commentary" id="commentary"></textarea>
         </div>
-        <div class="form__div">
+        <div class="form__contact__div">
             <label for="reason">Motif</label>
             <select name="reason" id="reason">
                 <option value="menu à emporter">Menu à emporter</option>
@@ -46,19 +73,50 @@
                 <option value="Autres">Autres</option>
             </select>
         </div>
-        <div class="form__div">
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date">
+        <div class="form__contact__div">
+            <label for="date_reservation">Date (A remplir pour toutes demande de réservation)</label>
+            <input type="date" name="date_reservation" id="button_contact">
         </div>
-        <div class="form__div">
-            <label for="time">Heure</label>
-            <input type="time" name="time" id="time">
+        <div class="form__contact__div">
+            <label for="hourly_reservation">Heure (A remplir pour toutes demande de réservation)</label>
+            <input type="time" name="hourly_reservation" id="hourly_reservation">
         </div>
-        <button class="custom__button hover__custom" id="button_reservation">Envoyer</button>
+        <button class="custom__button hover__custom" id="button_contact" name="button_contact">Envoyer</button>
     </form>
     
 </section>
+
 <div class="line flux"></div>
+
+<section class="section__opinion">
+
+    <h2 class="title__custom">Donner votre avis</h2>
+
+    <form method="post" class="form__opinion" id="opinion">
+    <div class="form__opinion__div">
+            <label for="firstname">Nom</label>
+            <input type="text" name="firstname" id="firstname">
+        </div>
+        <div class="form__opinion__div">
+            <label for="opinion_text">Message</label>
+            <textarea name="opinion_text" id="opinion_text"></textarea>
+        </div>
+        <div class="form__opinion__div">
+            <label for="note">Note</label>
+            <select name="note" id="note">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+
+    </form>
+
+
+</section>
 <?php
     require_once ('templates/footer.php');
     ?>

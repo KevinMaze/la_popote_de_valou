@@ -2,23 +2,22 @@
     require_once ("templates-admin/header-admin.php");
     require_once ("../lib/menu.php");
 
-    $recipe = false;
     $errors = [];
     $messages = [];
 
     try {
         if(isset($_GET["id"])){
-            $recipe = getRecipeById($pdo, (int)$_GET["id"]);
+            $recipe = getCategorieById($pdo, (int)$_GET["id"]);
         }
         if($recipe){
-            if(deleteRecipe($pdo, (int)$_GET["id"])){
-                $messages[] = "L'article a bien été supprimé, redirection dans <span class='couldown'></span> s...";
+            if(deleteCategorie($pdo, (int)$_GET["id"])){
+                $messages[] = "La catégorie a bien été supprimé, redirection dans <span class='couldown'></span> s...";
             }else{
                 $errors[] = "Une erreur s'est produite, redirection dans <span class='couldown'></span> s...";
             }
         }else{
-            $errors[] = "L'article n'existe pas, redirection dans <span class='couldown'></span> s...";
-        };
+            $errors[] = "La catégorie n'existe pas, redirection dans <span class='couldown'></span> s...";
+        }
     }catch (PDOException $e){
         echo $e->getMessage();
     }
@@ -44,7 +43,7 @@
 
     </section>
 
-    <script>setTimeout(() => {window.location.href="./carte.php"}, 4000);</script>
+    <script>setTimeout(() => {window.location.href="./categorie.php"}, 4000);</script>
     <script src="../js/couldown.js"></script>
 <?php
     require_once ("templates-admin/footer-admin.php");

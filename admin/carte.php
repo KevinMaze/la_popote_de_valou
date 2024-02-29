@@ -18,11 +18,10 @@
             $result = addRecipe ($pdo, htmlspecialchars($_POST["name_recipe"], ENT_QUOTES), htmlspecialchars($_POST["description"], ENT_QUOTES), htmlspecialchars(strval($_POST["price"]), ENT_QUOTES), htmlspecialchars($_POST["take_away"], ENT_QUOTES), $user_id, htmlspecialchars($_POST["id_categorie"], ENT_QUOTES));
             if ($result) {
                 $messages[] = "La recette a bien été ajoutée, redirection dans 3 secondes";
-                echo "<meta http-equiv='refresh' content='0';URL=".$_SERVER['PHP_SELF'].".php?refresh=3";
             } else {
-                $errors[] = "Erreur lors de l'ajout de la recette";
+                $errors[] = "Erreur lors de l'ajout de la recette, redirection dans 3 secondes";
             }
-            sleep(3);
+            echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh=3";
         };
     }catch (PDOException $e) {
         echo $e->getMessage();
@@ -57,7 +56,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="title-modal" id="exampleModalLabel">Suppression de l'article <?= $recipeWithCategorie["id_recipe"] ?></h1>
+                                            <h1 class="title-modal" id="exampleModalLabel">Suppression de l'article <?= $recipeWithCategorie["name_recipe"] ?></h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -66,7 +65,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="button__custom btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                                            <button type="button" class="button__custom"><a href="delete.php?id=<?= $recipeWithCategorie["id_recipe"] ?>">Supprimer</a></button>
+                                            <button type="button" class="button__custom"><a href="delete-recipe.php?id=<?=$recipeWithCategorie["id_recipe"] ?>">Supprimer</a></button>
                                         </div>
                                     </div>
                                 </div>
