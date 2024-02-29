@@ -15,8 +15,21 @@
             }
             echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
         }
-
     } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
+    try {
+        if(isset($_POST["button_opinion]"])){
+            $result = addOpinion($pdo, htmlspecialchars($_POST["firstname"], ENT_QUOTES), htmlspecialchars($_POST["opinion_text"], ENT_QUOTES), htmlspecialchars($_POST["note"], ENT_QUOTES), null, null);
+            if($result){
+                $messages[] = "Votre avis a bien été envoyé, redirection dans 3 secondes";
+            }else{
+                $errors[] = "Erreur lors de l'envoi de votre avis, redirection dans 3 secondes";
+            }
+            echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
+        }
+    }catch (Exception $e) {
         echo $e->getMessage();
     }
 
@@ -30,7 +43,7 @@
     <div class="alert alert-danger"><?= $error; ?></div>
 <?php }?>
 
-<section class="section__reservation flux">
+<section class="section__contact flux">
     
     <div class="section__reservation__info">
         <p>Pour votre commande, votre buffet, votre réservation de salle ou toute autres demandes, par téléphone :</p>
@@ -93,7 +106,7 @@
     <h2 class="title__custom">Donner votre avis</h2>
 
     <form method="post" class="form__opinion" id="opinion">
-    <div class="form__opinion__div">
+        <div class="form__opinion__div">
             <label for="firstname">Nom</label>
             <input type="text" name="firstname" id="firstname">
         </div>
@@ -111,8 +124,7 @@
                 <option value="5">5</option>
             </select>
         </div>
-
-
+        <button class="custom__button hover__custom" id="button_contact" name="button_opinion">Envoyer</button>
     </form>
 
 

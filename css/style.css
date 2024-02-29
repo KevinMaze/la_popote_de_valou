@@ -419,7 +419,8 @@ h3::first-letter {
 /***********************************END CAKE.PHP*******************************************************/
 
 /********************************START CONTACT.PHP****************************************************/
-.section__opinion {
+.section__opinion,
+.section__contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -434,6 +435,9 @@ h3::first-letter {
     justify-content: center;
     align-items: center;
     margin: 20px;
+    color: var(--Text-color);
+    font-family: var(--Para-font);
+    font-size: 1.2em;
 }
 
 .form__contact__div,
