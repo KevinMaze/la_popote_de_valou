@@ -21,15 +21,13 @@ function addContact(PDO $pdo, string $lastname, string $firstname, string $email
 /************************END FORM CONTACT******************/
 
 /************************START OPINION******************/
-function addOpinion(PDO $pdo, string $firstname, string $opinion_text, int $note, string|null $verify, int|null $id_user):bool
+function addOpinion(PDO $pdo, string $firstname, string $opinion_text, int $note):bool
 {
-    $sql = "INSERT INTO opinion(firstname, opinion_text, note, verify, id_user) VALUE (:firstname, :opinion_text, :note, :verify, :id_user)";
+    $sql = "INSERT INTO opinion(firstname, opinion_text, note) VALUE (:name, :opinion_text, :note)";
     $query = $pdo->prepare($sql);
-    $query->bindValue(":firstname", $firstname, PDO::PARAM_STR);
+    $query->bindValue(":name", $firstname, PDO::PARAM_STR);
     $query->bindValue(":opinion_text", $opinion_text, PDO::PARAM_STR);
     $query->bindValue(":note", $note, PDO::PARAM_INT);
-    $query->bindValue(":verify", $verify, PDO::PARAM_STR);
-    $query->bindValue(":id_user", $id_user, PDO::PARAM_INT);
     return $query->execute();
 }
 /************************END OPINION******************/

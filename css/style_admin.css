@@ -84,6 +84,24 @@
 }
 /**************END CARTE.PHP **************/
 
+/****************START USER.PHP**************/
+.section__user,
+.section__add__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--Para-font);
+    color: var(--Para-color);
+}
+
+.section__user h2,
+.section__add__user h2 {
+    align-self: center;
+    text-decoration: underline;
+}
+
+/****************END USER.PHP**************/
+
 /*************START DELETE.PHP**************/
 .section__delete h1 {
     font-family: var(--Para-font);
