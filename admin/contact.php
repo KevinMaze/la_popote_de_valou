@@ -54,7 +54,25 @@
                                 </div>
                             </div>
                         <a href="mailto:<?= $contact['email'] ?>" class="button__custom">Répondre /</a>
-                        <!-- <a href="delete-contact.php?id=<?= $contact['id'] ?>" class="btn btn-danger">Supprimer</a> -->
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal<?= $contact["id_contact"] ?>" class="button__custom">Supprimer</button>
+                            <div class="modal fade" id="exampleModal<?= $contact["id_contact"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="title-modal" id="exampleModalLabel">Suppression du message de <?= $contact["firstname"]." ".$contact["lastname"]?></h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Attention, vous êtes sur le point de supprimer le message de <?= $contact["firstname"]." ".$contact["lastname"]?>. La suppression est définitive.
+                                            Etes-vous sûr ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="button__custom btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="button" class="button__custom"><a href="delete-contact.php?id=<?=$contact["id_contact"] ?>">Supprimer</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                 </tr>
             <?php } ?>
         </tbody>

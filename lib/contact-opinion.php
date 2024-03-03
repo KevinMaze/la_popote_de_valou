@@ -26,6 +26,29 @@ function getContact(PDO $pdo):array
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// Récupération d'un contact par son id
+function getContactById (PDO $pdo, int $id_contact):bool|array
+{
+    $query = $pdo->prepare("SELECT * FROM contact WHERE id_contact = :id");
+    $query->bindValue(":id", $id_contact, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
+
+// Suppression d'un contact
+function deleteContact (PDO $pdo, int $id_contact):bool
+{
+    $query = $pdo->prepare("DELETE FROM contact WHERE id_contact = :id");
+    $query->bindValue(":id", $id_contact, PDO::PARAM_INT);
+    $query->execute();
+    
+    if($query->rowCount() > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 /************************END FORM CONTACT******************/
 
 /************************START OPINION******************/
