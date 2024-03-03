@@ -21,14 +21,17 @@
                 <label for="entre" class="form-label">Entrée</label>
                 <input class="form-select" id="entre" name="entre"></input>
             </div>
+
             <div class="mb-3">
                 <label for="plat" class="form-label">Plat</label>
                 <input class="form-select" id="plat" name="plat"></input>
             </div>
+
             <div class="mb-3">
                 <label for="dessert" class="form-label">Dessert</label>
                 <input class="form-select" id="dessert" name="dessert"></input>
             </div>
-            <input type="submit" class="button__custom" value="Modifier" name="modify">
+
+            <input type="submit" class="button__custom" value="Modifier" name="modify_user">
         </form>
     </section>

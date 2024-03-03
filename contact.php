@@ -125,7 +125,7 @@
                 <option value="5">5</option>
             </select>
         </div>
-        <button class="custom__button hover__custom" id="button_opinion" name="button_opinion">Envoyer</button>
+        <button type="submit" class="custom__button hover__custom" id="button_opinion" name="button_opinion">Envoyer</button>
     </form>
 
 

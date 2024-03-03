@@ -20,6 +20,9 @@
     }catch (PDOException $e){
         echo $e->getMessage();
     }
+
+
+    // var_dump(__DIR__."\user.php")
 ?>
 
 <section class="section__user">
@@ -46,8 +49,26 @@
                     <td class="disable"><?= $user["email"] ?></td>
                     <td><?= $user["role"] ?></td>
                     <td>
-                        <a class="button__custom" href="#">Modifier</a>
-                        <a class="button__custom">Supprimer</a>
+                        <a class="button__custom" href="modification_user.php?id=<?= $user["id_user"]?>">Modifier</a>
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal<?= $user["id_user"] ?>" class="button__custom">Supprimer</button>
+                            <div class="modal fade" id="exampleModal<?= $user["id_user"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="title-modal" id="exampleModalLabel">Suppression de l'article <?= $user["firstname"]." ".$user["lastname"]?></h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Attention, vous êtes sur le point de supprimer l'article <?= $user["firstname"]." ".$user["lastname"]?>. La suppression est définitive.
+                                            Etes-vous sûr ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="button__custom btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="button" class="button__custom"><a href="delete-user.php?id=<?=$user["id_user"] ?>">Supprimer</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </td>
                 </tr>
                 <?php } ?>
