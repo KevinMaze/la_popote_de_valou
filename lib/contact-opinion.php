@@ -18,6 +18,14 @@ function addContact(PDO $pdo, string $lastname, string $firstname, string $email
     return $query->execute();
 }
 
+// Récupération de tous les contacts
+function getContact(PDO $pdo):array
+{
+    $query = $pdo->prepare("SELECT * FROM contact");
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
 /************************END FORM CONTACT******************/
 
 /************************START OPINION******************/
