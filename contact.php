@@ -5,35 +5,34 @@
     $messages = [];
     $errors = [];
 
-    // try {
-    //     if(isset($_POST["button_contact"])){
-    //         $result = addContact($pdo, htmlspecialchars($_POST["lastname"], ENT_QUOTES), htmlspecialchars($_POST["firstname"], ENT_QUOTES), htmlspecialchars($_POST["email"], ENT_QUOTES), htmlspecialchars($_POST["phone"], ENT_QUOTES), htmlspecialchars($_POST["commentary"], ENT_QUOTES), htmlspecialchars($_POST["reason"], ENT_QUOTES), htmlspecialchars($_POST["date_reservation"], ENT_QUOTES), htmlspecialchars($_POST["hourly_reservation"], ENT_QUOTES), null);
-    //         if($result){
-    //             $messages[] = "Votre message a bien été envoyé, nous vous répondrons dans les plus brefs délais, redirection dans 3 secondes";
-    //         }else{
-    //             $errors[] = "Erreur lors de l'envoi de votre message, redirection dans 3 secondes";
-    //         }
-    //         echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
-    //     }
-    // } catch (Exception $e) {
-    //     echo $e->getMessage();
-    // }
+    try {
+        if(isset($_POST["button_contact"])){
+            $result = addContact($pdo, htmlspecialchars($_POST["lastname"], ENT_QUOTES), htmlspecialchars($_POST["firstname"], ENT_QUOTES), htmlspecialchars($_POST["email"], ENT_QUOTES), htmlspecialchars($_POST["phone"], ENT_QUOTES), htmlspecialchars($_POST["commentary"], ENT_QUOTES), htmlspecialchars($_POST["reason"], ENT_QUOTES), htmlspecialchars($_POST["date_reservation"], ENT_QUOTES), htmlspecialchars($_POST["hourly_reservation"], ENT_QUOTES), null);
+            if($result){
+                $messages[] = "Votre message a bien été envoyé, nous vous répondrons dans les plus brefs délais, redirection dans 3 secondes";
+            }else{
+                $errors[] = "Erreur lors de l'envoi de votre message, redirection dans 3 secondes";
+            }
+            echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 
     try {
-        if(isset($_POST["button_opinion]"])){
+        if(isset($_POST["button_opinion"])){
             $opinionResult = addOpinion($pdo, htmlspecialchars($_POST["name"], ENT_QUOTES), htmlspecialchars($_POST["opinion_text"], ENT_QUOTES), htmlspecialchars($_POST["note"], ENT_QUOTES));
             if($opinionResult){
                 $messages[] = "Votre avis a bien été envoyé, redirection dans 3 secondes";
             }else{
                 $errors[] = "Erreur lors de l'envoi de votre avis, redirection dans 3 secondes";
             }
-            // echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
+            echo "<meta http-equiv='refresh' content='3';URL=".$_SERVER['PHP_SELF'].".php?refresh='3'";
         }
     }catch (Exception $e) {
         echo $e->getMessage();
     }
 
-    var_dump($_POST);
 ?>
 <div class="line flux"></div>
 
@@ -44,7 +43,7 @@
     <div class="alert alert-danger"><?= $error; ?></div>
 <?php }?>
 
-<!-- <section class="section__contact flux">
+<section class="section__contact flux">
     
     <div class="section__reservation__info">
         <p>Pour votre commande, votre buffet, votre réservation de salle ou toute autres demandes, par téléphone :</p>
@@ -98,7 +97,7 @@
         <button class="custom__button hover__custom" id="button_contact" name="button_contact">Envoyer</button>
     </form>
     
-</section> -->
+</section>
 
 <div class="line flux"></div>
 
@@ -106,7 +105,7 @@
 
     <h2 class="title__custom">Donner votre avis</h2>
 
-    <form method="post" class="form__opinion" id="opinion">
+    <form method="post" class="form__opinion">
         <div class="form__opinion__div">
             <label for="name">Nom</label>
             <input type="text" name="name" id="name">
@@ -125,11 +124,12 @@
                 <option value="5">5</option>
             </select>
         </div>
-        <button type="submit" class="custom__button hover__custom" id="button_opinion" name="button_opinion">Envoyer</button>
+        <button type="submit" class="custom__button hover__custom" name="button_opinion">Envoyer</button>
     </form>
 
 
 </section>
+
 <?php
     require_once ('templates/footer.php');
     ?>

@@ -18,8 +18,8 @@
         <thead>
             <tr>
                 <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Email</th>
+                <th scope="col" class="disable">Prénom</th>
+                <th scope="col" class="disable">Email</th>
                 <th scope="col">Motif</th>
                 <th scope="col">Actions</th>
 
@@ -29,8 +29,8 @@
             <?php foreach ($contacts as $key => $contact) {?>
                 <tr>
                     <td><?= $contact['lastname'] ?></td>
-                    <td><?= $contact['firstname'] ?></td>
-                    <td><?= $contact['email'] ?></td>
+                    <td class="disable"><?= $contact['firstname'] ?></td>
+                    <td class="disable"><?= $contact['email'] ?></td>
                     <td><?= $contact['reason'] ?></td>
                     <td>
                         <button type="button" class="button__custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= htmlentities($contact["id_contact"])?>">Voir Menu /</button>
