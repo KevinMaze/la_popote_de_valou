@@ -50,7 +50,7 @@
                     <td class="form__th"><?= $recipeWithCategorie["name_recipe"] ?></td>
                     <td  class="disable"><?= $recipeWithCategorie["price"] ?> €</td>
                     <td class="disable"><?= $recipeWithCategorie["name_categorie"] ?></td>
-                    <td>Modifier | 
+                    <td><a href="modification_carte.php?id=<?= $recipeWithCategorie['id_recipe'] ?>" class="button__custom">Modifier |</a> 
                         <button data-bs-toggle="modal" data-bs-target="#exampleModal<?= $recipeWithCategorie["id_recipe"] ?>" class="button__custom">Supprimer</button>
                             <div class="modal fade" id="exampleModal<?= $recipeWithCategorie["id_recipe"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">

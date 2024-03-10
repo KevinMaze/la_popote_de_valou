@@ -100,6 +100,21 @@ function getRecipeById (PDO $pdo, int $id):array|bool
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
+// Modification d'une recette
+function modifyRecipe (PDO $pdo, string $name_recipe, string $description, float $price, string $take_away, int $id_user, int $id_categorie, int $id_recipe):bool
+{
+    $sql = ("UPDATE recipe SET name_recipe = :name_recipe, description = :description, price = :price, take_away = :take_away, id_user = :id_user, id_categorie = :id_categorie WHERE id_recipe = :id");
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":name_recipe", $name_recipe, PDO::PARAM_STR);
+    $query->bindValue(":description", $description, PDO::PARAM_STR);
+    $query->bindValue(":price", $price, PDO::PARAM_STR);
+    $query->bindValue(":take_away", $take_away, PDO::PARAM_STR);
+    $query->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+    $query->bindValue(":id_categorie", $id_categorie, PDO::PARAM_INT);
+    $query->bindValue(":id", $id_recipe, PDO::PARAM_INT);
+    return $query->execute();
+}
+
 // Supprimer une recette
 function deleteRecipe(PDO $pdo, int $id):bool
 {
