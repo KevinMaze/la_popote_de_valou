@@ -32,13 +32,11 @@
                 $errors[] = "Une erreur s'est produite ! redirection dans 3 s...";
             
             }
-            // echo "<meta http-equiv='refresh' content='3';URL='__DIR__/la_popote_de_valou/admin/modification_carte.php?refresh=3'";
         }
     }catch (Exception $e){
         echo $e->getMessage();
     };
 
-    var_dump(__DIR__)
 ?>
 
 

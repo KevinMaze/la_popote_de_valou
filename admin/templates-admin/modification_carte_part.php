@@ -42,6 +42,6 @@
             </select>
         </div>
 
-        <input type="submit" class="button__custom" value="Modifier" name="modify_recipe" onclick=goback()>
+        <input type="submit" class="button__custom" value="Modifier" name="modify_recipe">
     </form>
 </section>
